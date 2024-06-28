@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="./Assets/Style/main.css">
     <style>
         html {
             overflow-x: hidden;
@@ -15,6 +16,16 @@
         html, body, h1, h2, h3, h4, h5, h6 {
             font-family: "Roboto", sans-serif;
         }
+        #link {
+            font-size: 25px;
+            margin: 0 5px;
+            transition: transform 0.3s;
+        }
+        #link:hover {
+            transform: scale(1.2);
+            color: black;
+        }
+        
     </style>
   </head>
 <body class="w3-light-grey">
@@ -139,9 +150,9 @@
 <!-- Footer -->
 <footer class="w3-container w3-teal w3-center w3-margin-top">
   <p>Find me on social media.</p>
-  <a href="https://www.instagram.com/roshan_k.r_7/" target="_blank"><i class="fa fa-instagram w3-hover-opacity"></i></a>
-  <a href="https://www.linkedin.com/in/roshankr7/" target="_blank"><i class="fa fa-linkedin w3-hover-opacity"></i></a>
-  <a href="https://github.com/RoshanKrO7" target="_blank"><i class="fa fa-github w3-hover-opacity"></i></a>
+  <a href="https://www.instagram.com/roshan_k.r_7/" target="_blank"><i id="link" class="fa fa-instagram w3-hover-opacity"></i></a>
+  <a href="https://www.linkedin.com/in/roshankr7/" target="_blank"><i id="link" class="fa fa-linkedin w3-hover-opacity"></i></a>
+  <a href="https://github.com/RoshanKrO7" target="_blank"><i id="link" class="fa fa-github w3-hover-opacity"></i></a>
 </footer>
 
 <!-- AOS Script -->
