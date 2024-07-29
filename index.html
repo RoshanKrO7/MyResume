@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <title>Roshan's Resume</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,157 +10,316 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/8805295f1b.js" crossorigin="anonymous"></script>
     <style>
-    
         html {
             overflow-x: hidden;
+            scroll-padding-top: 70px;
         }
-        html, body, h1, h2, h3, h4, h5, h6,i,b,p {
+        
+        html, body, h1, h2, h3, h4, h5, h6, i, b, p {
             font-family: "Poppins", Arial, sans-serif;
             color: white;
         }
+        
         #link {
             font-size: 25px;
             margin: 0 5px;
             transition: transform 0.3s;
         }
+        
         #link:hover {
             transform: scale(1.2);
             color: black;
         }
         
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-evenly;
+            padding: 10px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+            height: 65px;
+        }
+        
+        .navbar .nav-item {
+            display: flex;
+            align-items: center;
+        }
+        
+        .navbar a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: color 0.3s, border-bottom 0.3s;
+        }
+        
+        .navbar a:hover, .navbar a.active {
+            border-bottom: 2px solid white;
+            color: #ff9900;
+        }
+        
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.7);
+            min-width: 160px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+            z-index: 1;
+            top: 100%; 
+        }
+        
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-transform: uppercase;
+        }
+        
+        .dropdown-content a:hover {
+            background-color: rgb(255, 255, 255);
+        }
+        
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+form {
+    max-width: 800px;
+    margin: auto;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 12px;
+    border: 2px solid #444;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+textarea {
+    resize: vertical;
+}
+
+#button {
+    background-color: #ff9900;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    margin-bottom: 10px;
+}
+
+#button:hover {
+    background-color: #e68a00;
+}
+
+#button:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5);
+}
 
     </style>
-  </head>
+</head>
 <body background="./Assets/images/Animated Shape.svg">
-<!-- Page Container -->
-<div class="w3-content w3-margin-top" style="max-width:1400px;">
-
-  <!-- The Grid -->
-  <div class="w3-row-padding">
-  
-    <!-- Left Column -->
-    <div class="w3-third" data-aos="fade-right" >
-      <div class="w3-transparent w3-text-white ">
-        <div class="w3-display-container" data-aos="fade-right">
-          <img src="./Assets/images/WhatsApp_Image_2024-06-07_at_18.10.00_f6a48b49.png" style="width:100%" alt="Avatar">
-          <div class="w3-display-bottomleft w3-container w3-text-white">
-            <h2>Roshan Kumar</h2>
-          </div>
-        </div>
-        <div class="w3-container" >
-          <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-white"></i>Frontend Developer</p>
-          <p><i class="fa-solid fa-location-arrow fa-fw w3-margin-right w3-large w3-text-white"></i>Bengaluru, India</p>
-          <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-white"></i>roshankumarrk7488@gmail.com</p>
-          <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-white"></i>7488113112</p>
-          <hr>
-        <p class="w3-large"><b><i class="fa-solid fa-laptop-code fa-fw w3-margin-right w3-text-white"></i>Skills</b></p>
-        <div class="w3-row">
-            <div class="w3-half" data-aos="fade-right">
-                <ul>
-                    <li>HTML5</li>
-                    <li>CSS3</li>
-                    <li>C#</li>
-                    <li>C#.NET</li>
-                    <li>Python</li>
-                    <li>MySql</li>
-                    <li>NoSql</li>
-                    <li>ASP .NET</li>
-                </ul>
-            </div>
-            <div class="w3-half" data-aos="fade-left">
-                <ul>
-                    
-                    <li>Arduino</li>
-                    <li>DBMS</li>
-                    <li>Data Structure</li>
-                    <li>Android App Development</li>
-                    <li>JavaScript</li>
-                    <li>Node JS</li>
-                    <li>Bootstrap</li>
-                </ul>
+    <div class="navbar">
+        <div class="nav-item"><a href="#about" class="nav-link">About</a></div>
+        <div class="nav-item"><a href="#skills" class="nav-link">Skills</a></div>
+        <div class="nav-item"><a href="#projects" class="nav-link">Projects</a></div>
+        <div class="nav-item"><a href="#education" class="nav-link">Education</a></div>
+        <div class="nav-item"><a href="#experience" class="nav-link">Experience</a></div>
+        <div class="nav-item"><a href="#contact" class="nav-link">Contact</a></div>
+        <div class="nav-item dropdown">
+            <a href="#" class="nav-link">CV</a>
+            <div class="dropdown-content">
+                <a href="path/to/view/cv.pdf" target="_blank">View CV</a>
+                <a href="path/to/download/cv.pdf" download>Download CV</a>
             </div>
         </div>
-          <br>
-          <p class="w3-large w3-text-theme"><b><i class="fa fa-language fa-fw w3-margin-right w3-text-white"></i>Languages</b></p>
-          <p>English</p>
-          <div class="w3-light-white w3-round-xlarge" data-aos="fade-up">
-            <div class="w3-round-xlarge w3-white" style="height:12px;width:100%"></div>
-          </div>
-          <p>Hindi</p>
-          <div class="w3-light-white w3-round-xlarge" data-aos="fade-up">
-            <div class="w3-round-xlarge w3-white" style="height:12px;width:100%"></div>
-          </div>
-          <p>Bhojpuri</p>
-          <div class="w3-light-white w3-round-xlarge" data-aos="fade-up">
-            <div class="w3-round-xlarge w3-white" style="height:12px;width:80%"></div>
-          </div>
-          <br>
-        </div>
-      </div>
-      <br>
     </div>
-    <!-- End Left Column -->
-
-    <!-- Right Column -->
-    <div class="w3-twothird">
-      <div class="w3-transparent w3-margin-bottom">
-        <h2 class="w3-text-white w3-padding-16"><i class="fa fa-tasks fa-fw w3-margin-right w3-xxlarge w3-text-white"></i>Personal Projects</h2>
-        <div class="w3-container w3-card w3-transparent w3-margin-bottom" data-aos="fade-up">
-          <h5 ><b>Smart Trolley</b></h5>
-          <h6 class="w3-text-white"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Jan 2022 - June 2022</h6>
-          <p>The Smart Trolley with RFID Integration project was aimed to revolutionize the traditional shopping experience by leveraging RFID technology. RFID tags were attached to products, and RFID readers are integrated into the shopping cart. This allowed seamless tracking of items in the cart, automated checkout, and personalized shopping experiences.</p>
-          <hr>
-        </div>
-        <div class="w3-container w3-card w3-transparent w3-margin-bottom" data-aos="fade-up">
-          <h5 ><b>GPS based advanced vehicle tracking system</b></h5>
-          <h6 class="w3-text-white"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Sept 2022 - Feb 2023</h6>
-          <p>The Advanced GPS-Based Vehicle Tracking System was a comprehensive solution designed to monitor and manage a fleet of vehicles efficiently. It leverages GPS technology, integrated with advanced software and hardware components, to provide real-time location data and route optimization.</p>
-          <hr>
-        </div>
-      </div>
-      <div class="w3-container w3-transparent w3-margin-bottom">
-        <h2 class="w3-text-white w3-padding-16"><i class="fa fa-university fa-fw w3-margin-right w3-xxlarge w3-text-white"></i>Education</h2>
-        <div class="w3-container w3-card w3-transparent w3-margin-bottom" data-aos="fade-up">
-          <h5><b>Presidency University / Bengaluru,India</b></h5>
-          <h6 class="w3-text-white"><i class="fa fa-calendar-o fa-fw w3-margin-right"></i>2021 - Present</h6>
-          <p>B.Tech Computer Science Engineering</p>
-          <hr>
-        </div>
-        <div class="w3-container w3-card w3-transparent w3-margin-bottom" data-aos="fade-up">
-          <h5><b>S R public School/ Patna, India</b></h5>
-          <h6 class="w3-text-white"><i class="fa fa-calendar-o fa-fw w3-margin-right"></i>2019 - 2021</h6>
-          <p>XII/ Science</p>
-          <hr>
-        </div>
-      </div>
-      <div class="w3-container  w3-transparent w3-margin-bottom">
-        <h2 class="w3-text-white w3-padding-16"><i class="fa fa-briefcase fa-fw w3-margin-right w3-xxlarge w3-text-white"></i>Work Experience</h2>
-        <div class=" w3-container w3-transparent w3-card w3-margin-bottom" data-aos="fade-up">
-          <h5><b>Transcriptor at Marktics</b></h5>
-          <h6 class="w3-text-white"><i class="fa fa-calendar-o fa-fw w3-margin-right"></i>Jan 2022 - Jun 2022</h6>
-          <p>Handling the recording and transcription for Hinglish language. Working on the transcription on online workbench application in the Hindi and English language.</p>
-          <hr>
-        </div>
-      </div>
-    </div>
-    <!-- End Right Column -->
+    <!-- Page Container -->
+    <div class="w3-content w3-margin-top" style="max-width:1400px;">
+        <!-- The Grid -->
+        <div class="w3-row-padding">
+            <!-- Left Column -->
+            <div class="w3-third" data-aos="fade-right" >
+                <div class="w3-transparent w3-text-white" id="about">
+                    <div class="w3-display-container" data-aos="fade-right" style="padding-top: 60px;">
+                        <img src="./Assets/images/WhatsApp_Image_2024-06-07_at_18.10.00_f6a48b49.png" style="width:100%" alt="Avatar">
+                        <div class="w3-display-bottomleft w3-container w3-text-white">
+                            <h2>Roshan Kumar</h2>
+                        </div>
+                    </div>
+                    <div class="w3-container">
+                        <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-white"></i>Frontend Developer</p>
+                        <p><i class="fa-solid fa-location-arrow fa-fw w3-margin-right w3-large w3-text-white"></i>Bengaluru, India</p>
+                        <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-white"></i>roshankumarrk7488@gmail.com</p>
+                        <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-white"></i>7488113112</p>
+                        <hr>
+                        <p class="w3-large"><b><i class="fa-solid fa-laptop-code fa-fw w3-margin-right w3-text-white" id="skills"></i>Skills</b></p>
+                        <div class="w3-row">
+                            <div class="w3-half" data-aos="fade-right">
+                                <ul>
+                                    <li>HTML5</li>
+                                    <li>CSS3</li>
+                                    <li>C#</li>
+                                    <li>C#.NET</li>
+                                    <li>Python</li>
+                                    <li>MySql</li>
+                                    <li>NoSql</li>
+                                    <li>ASP .NET</li>
+                                </ul>
+                            </div>
+                            <div class="w3-half" data-aos="fade-left">
+                                <ul>
+                                    <li>Arduino</li>
+                                    <li>DBMS</li>
+                                    <li>Data Structure</li>
+                                    <li>Android App Development</li>
+                                    <li>JavaScript</li>
+                                    <li>Node JS</li>
+                                    <li>Bootstrap</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <br>
+                        <p class="w3-large w3-text-theme"><b><i class="fa fa-language fa-fw w3-margin-right w3-text-white"></i>Languages</b></p>
+                        <p>English</p>
+                        <div class="w3-light-white w3-round-xlarge" data-aos="fade-up">
+                            <div class="w3-round-xlarge w3-white" style="height:12px;width:100%"></div>
+                        </div>
+                        <p>Hindi</p>
+                        <div class="w3-light-white w3-round-xlarge" data-aos="fade-up">
+                            <div class="w3-round-xlarge w3-white" style="height:12px;width:100%"></div>
+                        </div>
+                        <p>Bhojpuri</p>
+                        <div class="w3-light-white w3-round-xlarge" data-aos="fade-up">
+                            <div class="w3-round-xlarge w3-white" style="height:12px;width:80%"></div>
+                        </div>
+                        <br>
+                    </div>
+                </div>
+                <br>
+            </div>
+            <!-- End Left Column -->
+            <!-- Right Column -->
+              <div class="w3-twothird" style="padding-top: 60px;">
+                <div class="w3-transparent w3-margin-bottom" id="projects">
+                    <h2 class="w3-text-white w3-padding-16"><i class="fa fa-tasks fa-fw w3-margin-right w3-xxlarge w3-text-white"></i>Personal Projects</h2>
+                    <div class="w3-container w3-card w3-transparent w3-margin-bottom" data-aos="fade-up">
+                        <h5><b>Smart Trolley</b></h5>
+                        <h6 class="w3-text-white"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Jan 2022 - June 2022</h6>
+                        <p>The Smart Trolley with RFID Integration project was aimed to revolutionize the traditional shopping experience by leveraging RFID technology. RFID tags were attached to products, and RFID readers are integrated into the shopping cart. This allowed seamless tracking of items in the cart, automated checkout, and personalized shopping experiences.</p>
+                        <hr>
+                    </div>
+                    <div class="w3-container w3-card w3-transparent w3-margin-bottom" data-aos="fade-up">
+                        <h5><b>GPS based advanced vehicle tracking system</b></h5>
+                        <h6 class="w3-text-white"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Sept 2022 - Feb 2023</h6>
+                        <p>The Advanced GPS-Based Vehicle Tracking System was a comprehensive solution designed to monitor and manage a fleet of vehicles efficiently. It leverages GPS technology, integrated with advanced software and hardware components, to provide real-time location data and route optimization.</p>
+                        <hr>
+                    </div>
+                    <div class="w3-container w3-card w3-transparent w3-margin-bottom" data-aos="fade-up">
+                      <h5><b>Personal Portfolio Website</b></h5>
+                      <h6 class="w3-text-white"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Jul 2024 - Aug 2024</h6>
+                      <p>Developed a personal portfolio website to showcase my skills, projects, and professional experience. The website serves as an interactive platform for potential employers and clients to view my work and learn more about my background.</p>
+                      <hr>
+                  </div>
+                  <div class="w3-container w3-card w3-transparent w3-margin-bottom" data-aos="fade-up">
+                    <h5><b>Hospital Operation Scheduler</b></h5>
+                    <h6 class="w3-text-white"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Jul 2024 - Aug 2024</h6>
+                    <p>Developed a hospital operation scheduler to streamline the management of doctor schedules and surgical procedures. This system aimed to improve the efficiency of hospital operations by providing a clear and organized interface for scheduling and updating appointments.</p>
+                    <hr>
+                </div>
+                </div>
+                <div class="w3-container w3-transparent w3-margin-bottom">
+                    <h2 class="w3-text-white w3-padding-16"><i class="fa fa-university fa-fw w3-margin-right w3-xxlarge w3-text-white" id="education"></i>Education</h2>
+                    <div class="w3-container w3-card w3-transparent w3-margin-bottom" data-aos="fade-up">
+                        <h5><b>Presidency University / Bengaluru,India</b></h5>
+                        <h6 class="w3-text-white"><i class="fa fa-calendar-o fa-fw w3-margin-right"></i>2021 - Present</h6>
+                        <p>B.Tech Computer Science Engineering</p>
+                        <hr>
+                    </div>
+                    <div class="w3-container w3-card w3-transparent w3-margin-bottom" data-aos="fade-up">
+                        <h5><b>S R public School/ Patna, India</b></h5>
+                        <h6 class="w3-text-white"><i class="fa fa-calendar-o fa-fw w3-margin-right"></i>2019 - 2021</h6>
+                        <p>XII/ Science</p>
+                        <hr>
+                    </div>
+                </div>
+                <div class="w3-container w3-transparent w3-margin-bottom">
+                    <h2 class="w3-text-white w3-padding-16"><i class="fa fa-briefcase fa-fw w3-margin-right w3-xxlarge w3-text-white" id="experience"></i>Work Experience</h2>
+                    <div class="w3-container w3-transparent w3-card w3-margin-bottom" data-aos="fade-up">
+                        <h5><b>Transcriptor at Marktics</b></h5>
+                        <h6 class="w3-text-white"><i class="fa fa-calendar-o fa-fw w3-margin-right"></i>Jan 2022 - Jun 2022</h6>
+                        <p>Handling the recording and transcription for Hinglish language. Working on the transcription on online workbench application in the Hindi and English language.</p>
+                        <hr>
+                    </div>
+                    <div class="w3-container w3-transparent w3-card w3-margin-bottom" data-aos="fade-up">
+                      <h5><b>Full Stack Developer Intern at Unified Mentor</b></h5>
+                      <h6 class="w3-text-white"><i class="fa fa-calendar-o fa-fw w3-margin-right"></i>Jul 2024 - Aug 2024</h6>
+                      <p>
+                        During my internship, I worked on two key projects. The first was a personal portfolio website where I utilized HTML, CSS, and JavaScript to showcase my skills and experience. The second project was a hospital operation scheduler, where I developed a system for managing doctor schedules and surgeries using Firebase Firestore, enhancing the efficiency of hospital operations. This experience honed my skills in front-end development and Firebase integration, and allowed me to contribute to real-world applications.
+                      </p>
+                      
+                      <hr>
+                  </div>
+                </div>
+                <!-- Contact Form Section -->
+          <div class="w3-container w3-transparent w3-margin-bottom" id="contact">
+            <h2 class="w3-text-white w3-padding-16"><i class="fa fa-envelope fa-fw w3-margin-right w3-xxlarge w3-text-white"></i>Contact Me</h2>
+            <div class="w3-container w3-card w3-transparent" data-aos="fade-up">
+              <form action="https://formspree.io/f/mjkbyqok" method="POST"  id="myForm">
+            <div class="w3-row">
+              <div class="w3-col l5 s12 w3-margin-top w3-margin-right">
+                  <label for="name" class="w3-text-white">Name</label>
+                  <input type="text" id="name" name="name" class="w3-input w3-border w3-round-large" required>
+              </div>
+              <div class="w3-col l5 s12 w3-margin-top">
+                  <label for="email" class="w3-text-white">Email</label>
+                  <input type="email" id="email" name="email" class="w3-input w3-border w3-round-large" required>
+              </div>
+          </div>
+          <div class="w3-row">
+              <div class="w3-col s12">
+                  <label for="message" class="w3-text-white">Message</label>
+                  <textarea id="message" name="message" class="w3-input w3-border w3-round-large" rows="4" required></textarea>
+              </div>
+          </div>
+          <button type="submit" id="button" class="w3-button w3-theme w3-round-large w3-margin-top">Send Message</button>
+      </form>
   </div>
-  <!-- End Grid -->
-</div>
-<!-- End Page Container -->
-
-<!-- Footer -->
-<footer class="w3-container w3-transparent w3-center w3-margin-top">
-  <p>Find me on social media.</p>
-  <a href="https://www.instagram.com/roshan_k.r_7/" target="_blank"><i id="link" class="fa fa-instagram w3-hover-opacity"></i></a>
-  <a href="https://www.linkedin.com/in/roshankr7/" target="_blank"><i id="link" class="fa fa-linkedin w3-hover-opacity"></i></a>
-  <a href="https://github.com/RoshanKrO7" target="_blank"><i id="link" class="fa fa-github w3-hover-opacity"></i></a>
-</footer>
-
-<!-- AOS Script -->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  AOS.init();
-</script>
+          </div>
+              </div>
+            <!-- End Right Column -->
+        </div>
+        <!-- End Grid -->
+    </div>
+    <!-- End Page Container -->
+    <!-- Footer -->
+    <footer class="w3-container w3-transparent w3-center w3-margin-top">
+        <p>Find me on social media.</p>
+        <a href="https://www.instagram.com/roshan_k.r_7/" target="_blank"><i id="link" class="fa fa-instagram w3-hover-opacity"></i></a>
+        <a href="https://www.linkedin.com/in/roshankr7/" target="_blank"><i id="link" class="fa fa-linkedin w3-hover-opacity"></i></a>
+        <a href="https://github.com/RoshanKrO7" target="_blank"><i id="link" class="fa fa-github w3-hover-opacity"></i></a>
+    </footer>
+    <!-- AOS Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 </html>
