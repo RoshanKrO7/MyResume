@@ -38,10 +38,17 @@
             background-color: rgba(0, 0, 0, 0.7);
             z-index: 1000;
             display: flex;
-            justify-content: space-evenly;
-            padding: 10px 0;
+            justify-content: center;
+            padding: 0;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
             height: 65px;
+        }
+        
+        .navbar-links {
+            display: flex;
+            justify-content: center;
+            width: 80%;
+            max-width: 1200px;
         }
         
         .navbar .nav-item {
@@ -133,21 +140,101 @@ textarea {
     box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5);
 }
 
+/* Hamburger menu icon */
+.navbar .menu-icon {
+    display: none;
+    cursor: pointer;
+    padding: 14px 20px;
+}
+
+.navbar .menu-icon div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+    transition: 0.4s;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        height: auto;
+        padding: 0;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+    
+    .navbar-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+    }
+    
+    .navbar .menu-icon {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 10px;
+    }
+    
+    .navbar-links.active {
+        display: flex;
+        padding-top: 50px;
+    }
+    
+    .navbar .nav-item {
+        width: 100%;
+    }
+    
+    .navbar a {
+        width: 100%;
+        padding: 10px;
+    }
+    
+    .dropdown-content {
+        position: static;
+        width: 100%;
+        box-shadow: none;
+        padding-left: 20px;
+    }
+    
+    /* Animate hamburger to X when active */
+    .change .bar1 {
+        transform: translate(0, 8px) rotate(-45deg);
+    }
+    
+    .change .bar2 {
+        opacity: 0;
+    }
+    
+    .change .bar3 {
+        transform: translate(0, -8px) rotate(45deg);
+    }
+}
+
     </style>
 </head>
 <body background="./Assets/images/Animated Shape.svg">
     <div class="navbar">
-        <div class="nav-item"><a href="#about" class="nav-link">About</a></div>
-        <div class="nav-item"><a href="#skills" class="nav-link">Skills</a></div>
-        <div class="nav-item"><a href="#projects" class="nav-link">Projects</a></div>
-        <div class="nav-item"><a href="#education" class="nav-link">Education</a></div>
-        <div class="nav-item"><a href="#experience" class="nav-link">Experience</a></div>
-        <div class="nav-item"><a href="#contact" class="nav-link">Contact</a></div>
-        <div class="nav-item dropdown">
-            <a href="#" class="nav-link">CV</a>
-            <div class="dropdown-content">
-                <a href="https://drive.google.com/file/d/1pk4ApWh1t8sIzapb7T4Enqov2hLWFkzr/view?usp=drive_link" target="_blank">View CV</a>
-                <a href="https://raw.githubusercontent.com/RoshanKrO7/MyResume/main/Roshan%20Kumar's%20Resume.pdf" download>Download CV</a>
+        <div class="menu-icon" onclick="toggleMenu(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
+        <div class="navbar-links">
+            <div class="nav-item"><a href="#about" class="nav-link">About</a></div>
+            <div class="nav-item"><a href="#skills" class="nav-link">Skills</a></div>
+            <div class="nav-item"><a href="#projects" class="nav-link">Projects</a></div>
+            <div class="nav-item"><a href="#education" class="nav-link">Education</a></div>
+            <div class="nav-item"><a href="#experience" class="nav-link">Experience</a></div>
+            <div class="nav-item"><a href="#contact" class="nav-link">Contact</a></div>
+            <div class="nav-item dropdown">
+                <a href="#" class="nav-link">CV</a>
+                <div class="dropdown-content">
+                    <a href="https://drive.google.com/file/d/1pk4ApWh1t8sIzapb7T4Enqov2hLWFkzr/view?usp=drive_link" target="_blank">View CV</a>
+                    <a href="https://raw.githubusercontent.com/RoshanKrO7/MyResume/main/Roshan%20Kumar's%20Resume.pdf" download>Download CV</a>
+                </div>
             </div>
         </div>
     </div>
@@ -182,6 +269,8 @@ textarea {
                                     <li>MySql</li>
                                     <li>NoSql</li>
                                     <li>ASP .NET</li>
+                                    <li>Supabase</li>
+                                    <li>ReactJS</li>
                                 </ul>
                             </div>
                             <div class="w3-half" data-aos="fade-left">
@@ -193,6 +282,7 @@ textarea {
                                     <li>JavaScript</li>
                                     <li>Node JS</li>
                                     <li>Bootstrap</li>
+                                    <li>Firebase</li>
                                 </ul>
                             </div>
                         </div>
@@ -242,6 +332,19 @@ textarea {
                     <h5><b>Hospital Operation Scheduler</b></h5>
                     <h6 class="w3-text-white"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Jul 2024 - Aug 2024</h6>
                     <p>Developed a hospital operation scheduler to streamline the management of doctor schedules and surgical procedures. This system aimed to improve the efficiency of hospital operations by providing a clear and organized interface for scheduling and updating appointments.</p>
+                    <hr>
+                </div>
+                <div class="w3-container w3-card w3-transparent w3-margin-bottom" data-aos="fade-up">
+                    <h5><b>Digital Health Passport</b></h5>
+                    <h6 class="w3-text-white"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Oct 2024 - Feb 2024</h6>
+                    <p>Developed a Digital Health Passport application that enables secure storage and viewing of medical reports. The system incorporates AI for report analysis and implements robust security measures including encryption and hashing techniques to protect sensitive health information. This ensures that patients can safely store, access, and share their medical records while maintaining data privacy and integrity.</p>
+                    <hr>
+                </div>
+                <!-- Add this after your Digital Health Passport project and before the Education section -->
+                <div class="w3-container w3-card w3-transparent w3-margin-bottom" data-aos="fade-up">
+                    <h5><b>Smart Tailoring Service Platform</b></h5>
+                    <h6 class="w3-text-white"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Mar 2025 - Apr 2025</h6>
+                    <p>Developed a Progressive Web Application (PWA) for tailoring services using React.js and Supabase. The platform enables users to schedule pickup and delivery of clothing items, track service status in real-time, and manage tailoring orders. Features include secure authentication, order history, service notifications, and a responsive interface that works seamlessly across mobile and desktop devices.</p>
                     <hr>
                 </div>
                 </div>
@@ -319,6 +422,20 @@ textarea {
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init();
+    </script>
+    <script>
+        function toggleMenu(element) {
+            element.classList.toggle("change");
+            document.querySelector('.navbar-links').classList.toggle("active");
+        }
+        
+        // Close menu when clicking on links
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                document.querySelector('.navbar-links').classList.remove("active");
+                document.querySelector('.menu-icon').classList.remove("change");
+            });
+        });
     </script>
 </body>
 </html>
